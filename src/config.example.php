@@ -22,6 +22,7 @@ define('PAGE_PATH', SRC_PATH.'/pages');
 define('FUNC_PATH', SRC_PATH.'/functions');
 define('DB_PATH', STORAGE_PATH.'/database');
 define('CACHE_PATH', STORAGE_PATH.'/cache');
+define('LOG_PATH', STORAGE_PATH.'/logs');
 
 define('ERR_PAGE_PATH', SRC_PATH.'/errors');
 define('LAYOUT_PATH', SRC_PATH.'/layouts');
