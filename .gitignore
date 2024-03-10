@@ -1,0 +1,4 @@
+/node_modules/
+/vendor/
+/public/static/
+/src/config.php
