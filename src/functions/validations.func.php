@@ -62,7 +62,7 @@ function vl_confirm(
 ): ?string {
 
 	if(
-		$password !== $confirmation
+		$source !== $confirmation
 	) {
 		return __l('errors.confirm', $name);
 	}

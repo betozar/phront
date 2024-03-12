@@ -15,6 +15,11 @@ function http_request_url(): string
   return sanitize_url($_SERVER['REQUEST_URI']);
 }
 
+function http_referer(): string
+{
+  return sanitize_url($_SERVER['HTTP_REFERER']);
+}
+
 function http_request_headers(): array
 {
   $headers = sanitize_array(getallheaders());
@@ -157,9 +162,50 @@ function http_redirect_away(string $url): void
   header('Location: '.$url);
 }
 
+function http_redirect_back(): void
+{
+  header('Location: '.http_referer());
+  exit;
+}
+
 function http_throw_not_found(bool $exit = true): void
 {
   http_response_status(404);
-  require_error_page('404');
+  
+  if( http_request_method() === 'GET' )
+    require_error_page('404');
+  
   if($exit) exit;
+}
+
+function http_only_get(): void
+{
+  if( http_request_method() !== 'GET' )
+  {
+    http_throw_not_found();
+  }
+}
+
+function http_only_post(): void
+{
+  if( http_request_method() !== 'POST' )
+  {
+    http_throw_not_found();
+  }
+}
+
+function http_only_auth(): void
+{
+  if( !auth_is_active() )
+  {
+    http_throw_not_found();
+  }
+}
+
+function http_only_guest(): void
+{
+  if( auth_is_active() )
+  {
+    http_throw_not_found();
+  }
 }

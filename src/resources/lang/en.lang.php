@@ -21,4 +21,5 @@ return [
 	'errors.max_size' => '%s size is greater than %d MB.',
 	'errors.file_types' => '%s must be of type %s.',
 	'errors.json' => '%s must be a valid JSON.',
+	'errors.exists' => '%s already exists.',
 ];

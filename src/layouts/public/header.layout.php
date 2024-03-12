@@ -31,4 +31,5 @@
 </head>
 <body>
 
+<?php partial('alert'); ?>
 <?php partial('navbar'); ?>

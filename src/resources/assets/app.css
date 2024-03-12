@@ -1,4 +1,4 @@
-/*body {
+body {
 	background-color: rgba(0, 0, 0, 0.85);
 	color: white;
 }
@@ -6,4 +6,15 @@
 a {
 	color: white;
 }
-*/
+
+.alert-info {
+	color: lightblue;
+}
+
+.alert-warning {
+	color: orange;
+}
+
+.alert-error {
+	color: tomato;
+}
