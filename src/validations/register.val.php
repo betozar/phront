@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * ===========================================
+ * Validations for login API requests
+ * ===========================================
+ */
+
+
+/**
+ * Validate name field
+ */
 function validate_name(?string $value): ?string
 {
   $name = 'Name';
@@ -16,6 +26,10 @@ function validate_name(?string $value): ?string
   return null;
 }
 
+
+/**
+ * Validate email field
+ */
 function validate_email(?string $value, PDO $db): ?string
 {
   $name = 'Email Address';
@@ -36,6 +50,10 @@ function validate_email(?string $value, PDO $db): ?string
   return null;
 }
 
+
+/**
+ * Validate password field
+ */
 function validate_password(?string $value, ?string $confirm): ?string
 {
   $name = 'Password';

@@ -5,6 +5,11 @@
  * LANGUAGE
  * ================================
  */
+
+
+/**
+ * Set proper app language for current session
+ */
 function session_lang_start(): void
 {
   if( !isset($_SESSION[SESSION_FIELD]['lang']) )
@@ -25,21 +30,37 @@ function session_lang_start(): void
   $_SERVER[SESSION_FIELD]['trans'] = require($trans_file);
 }
 
+
+/**
+ * Reset app language to the defaults
+ */
 function session_lang_reset(): void
 {
   $_SESSION[SESSION_FIELD]['lang'] = APP_LANG_DEFAULT;
 }
 
+
+/**
+ * Get current app language
+ */
 function session_lang_get(): string
 {
   return $_SESSION[SESSION_FIELD]['lang'] ?? APP_LANG_DEFAULT;
 }
 
+
+/**
+ * Set app language, will be applied after refreshing the page
+ */
 function session_lang_set(string $key): void
 {
   $_SESSION[SESSION_FIELD]['lang'] = $key;
 }
 
+
+/**
+ * Get a static translation
+ */
 function __(string $key): string
 {
   if( session_lang_get() === APP_LANG_DEFAULT ) 
@@ -48,6 +69,10 @@ function __(string $key): string
   return $_SERVER[SESSION_FIELD]['trans'][$key] ?? $key;
 }
 
+
+/**
+ * Get a dynamic translation
+ */
 function __l(string $key, ...$params): string
 {
   $format = $_SERVER[SESSION_FIELD]['trans'][$key] ?? null;

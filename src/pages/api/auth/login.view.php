@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * ================================================
+ * Authenticate user session
+ * ================================================
+ */
+
 require_once TABLE_PATH . '/users.db.php';
 require_once TABLE_PATH . '/user_preferences.db.php';
 require_once VALIDATION_PATH . '/login.val.php';

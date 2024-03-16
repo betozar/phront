@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * ================================================
+ * Delete authenticated account
+ * ================================================
+ */
+
 require_once TABLE_PATH . '/users.db.php';
 require_once TABLE_PATH . '/user_preferences.db.php';
 

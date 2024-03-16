@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * ===========================================
+ * Validations for login API requests
+ * ===========================================
+ */
+
+
+/**
+ * Validate email field
+ */
 function validate_email(mixed $value): ?string
 {
 	$name = 'Email Address';
@@ -15,6 +25,10 @@ function validate_email(mixed $value): ?string
 	return null;
 }
 
+
+/**
+ * Validate password field
+ */
 function validate_password(mixed $value): ?string
 {
 	$name = 'Password';
@@ -30,6 +44,10 @@ function validate_password(mixed $value): ?string
 	return null;
 }
 
+
+/**
+ * Validate credentials field
+ */
 function validate_credentails(
 	string $email, 
 	string $password,

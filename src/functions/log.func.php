@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * ================================
+ * LANGUAGE
+ * ================================
+ */
+
+
+/**
+ * Create new application log
+ */
 function _log(string $message, ?string $default = null): void {
   $filename = $default ?? date('Y_m_d').'_phront';
   

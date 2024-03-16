@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * ================================
+ * LANGUAGE
+ * ================================
+ */
+
+
+/**
+ * Handle incoming request and returns the proper 
+ * page view file based on the URL
+ */
 function router_get_page(): ?string
 {
 	$url = http_request_url();

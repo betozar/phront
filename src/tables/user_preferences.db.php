@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * ================================
+ * TABLE: user_preferences
+ * ================================
+ */
+
+
+/**
+ * Find record by user id
+ */
 function user_preferences_find(
   PDO $db,
   string $user_id
@@ -22,6 +32,10 @@ function user_preferences_find(
 	return $item;
 }
 
+
+/**
+ * Store new record
+ */
 function user_preferences_store(
   PDO $db,
   string $user_id,
@@ -60,6 +74,10 @@ function user_preferences_store(
   return $stmt->execute($params);
 }
 
+
+/**
+ * Update record
+ */
 function user_preferences_update(
   PDO $db,
   string $user_id,
@@ -89,6 +107,10 @@ function user_preferences_update(
 	return $stmt->execute($params);
 }
 
+
+/**
+ * Delete record by user id
+ */
 function user_preferences_delete(
   PDO $db,
   string $user_id

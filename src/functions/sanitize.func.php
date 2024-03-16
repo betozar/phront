@@ -5,6 +5,11 @@
  * SANITIZATION
  * ================================
  */
+
+
+/**
+ * Sanitize full special chars in a string
+ */
 function sanitize_full(string $str): string
 {
   return filter_var(
@@ -13,6 +18,10 @@ function sanitize_full(string $str): string
   );
 }
 
+
+/**
+ * Sanitize full special chars in an array
+ */
 function sanitize_array(array $array): array
 {
   return filter_var_array(
@@ -21,6 +30,10 @@ function sanitize_array(array $array): array
   );
 }
 
+
+/**
+ * Sanitize a URL
+ */
 function sanitize_url(string $url): string
 {
   return filter_var(
@@ -29,6 +42,10 @@ function sanitize_url(string $url): string
   );
 }
 
+
+/**
+ * Sanitize a given JSON as a string and returns an array
+ */
 function sanitize_json(string $data): array
 {
   $arr = json_decode($data, true);

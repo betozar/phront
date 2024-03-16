@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * ================================
+ * Helpers
+ * ================================
+ */
+
 require_once FUNC_PATH . '/auth.func.php';
 require_once FUNC_PATH . '/cache.func.php';
 require_once FUNC_PATH . '/database.func.php';

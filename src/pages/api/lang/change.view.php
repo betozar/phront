@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * ================================================
+ * Change display language for current session
+ * ================================================
+ */
+
 require_once TABLE_PATH . '/user_preferences.db.php';
 
 http_only_post();

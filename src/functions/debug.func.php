@@ -5,6 +5,11 @@
  * DEBUG
  * ================================
  */
+
+
+/**
+ * Dumps given variables
+ */
 function _d(mixed ...$objs): void
 {
   if(!APP_DEBUG) return;
@@ -17,6 +22,10 @@ function _d(mixed ...$objs): void
   }
 }
 
+
+/**
+ * Die and dump given variables
+ */
 function _dd(mixed ...$objs): void
 {
   if(!APP_DEBUG) return;

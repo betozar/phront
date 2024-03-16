@@ -6,11 +6,20 @@
  * ================================
  */
 
+
+/**
+ * Appends a given path to APP_URL
+ */
 function url(string $to): string
 {
   return APP_URL . "/{$to}";
 }
 
+
+/**
+ * Returns proper asset url based 
+ * on the environment 
+ */
 function asset(string $name): string
 {
   if(

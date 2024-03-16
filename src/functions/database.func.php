@@ -6,6 +6,10 @@
  * ================================
  */
 
+
+/**
+ * Create new SQLITE connection
+ */
 function db_sqlite_connect(): ?PDO
 {
 	try {
@@ -24,6 +28,10 @@ function db_sqlite_connect(): ?PDO
 	}
 }
 
+
+/**
+ * Create new MYSQL connection
+ */
 function db_mysql_connect(): ?PDO
 {
 	try {

@@ -1,6 +1,13 @@
 <?php
 
+/**
+ * ================================
+ * English Source
+ * ================================
+ */
+
 return [
+	// dynamic translations
 	'errors.required' => '%s is required.',
 	'errors.string' => '%s must be a string.',
 	'errors.email' => '%s must be a valid email.',

@@ -7,9 +7,8 @@ export default {
 		emptyOutDir: true,
 		rollupOptions: {
 			input: [
-				'src/resources/assets/app.css',
-				'src/resources/assets/app.js',
-				'src/resources/assets/login.js',
+				'src/resources/assets/css/app.css',
+				'src/resources/assets/js/app.js',
 			]
 		},
 	},

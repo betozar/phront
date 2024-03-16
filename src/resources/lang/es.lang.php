@@ -1,8 +1,15 @@
 <?php
 
+/**
+ * ================================
+ * Spanish Source
+ * ================================
+ */
+
 return [
 
-
+	
+	// static translations
 	'Welcome to Phront' => 'Phront te da la bienvenida',
 	'Email Address' => 'Correo Electrónico',
 	'Password' => 'Contraseña',
@@ -33,7 +40,7 @@ return [
 	'Account can not be created' => 'La cuenta no puede ser creada',
 
 	
-
+	// dynamic translations
 	'errors.required' => '%s es obligatorio.',
 	'errors.string' => '%s debe ser una cadena de texto.',
 	'errors.email' => '%s debe ser un correo electrónico válido.',

@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * ================================
+ * VIEWS
+ * ================================
+ */
+
 function vl_is_required(
 	mixed $value, 
 	string $name

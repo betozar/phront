@@ -5,16 +5,29 @@
  * VIEWS
  * ================================
  */
+
+
+/**
+ * Require a page located at src/errors
+ */
 function require_error_page(string $page): void
 {
   require_once ERR_PAGE_PATH . "/{$page}.view.php";
 }
 
+
+/**
+ * Require a page located at src/pages
+ */
 function require_page(string $page): void
 {
   require_once $page;
 }
 
+
+/**
+ * Require a section of a layout 
+ */
 function layout(string $name, array $data = []): void
 {
   extract($data);
@@ -24,6 +37,10 @@ function layout(string $name, array $data = []): void
 	require_once LAYOUT_PATH . "/{$__layout_file__}";
 }
 
+
+/**
+ * Required a shared component
+ */
 function partial(string $name, array $data = []): void
 {
   extract($data);

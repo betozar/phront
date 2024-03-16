@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * ================================
+ * TABLE: users
+ * ================================
+ */
+
+
+/**
+ * Find record by id
+ */
 function users_find_by_id(
 	PDO $db, 
 	string $id
@@ -22,6 +32,10 @@ function users_find_by_id(
 	return $item;
 }
 
+
+/**
+ * Find record by email
+ */
 function users_find_by_email(
 	PDO $db, 
 	string $email
@@ -44,6 +58,10 @@ function users_find_by_email(
 	return $item;
 }
 
+
+/**
+ * Store new record
+ */
 function users_store(
 	PDO $db, 
 	array $data
@@ -87,6 +105,10 @@ function users_store(
 	return $stmt->execute($params);
 }
 
+
+/**
+ * Update record name field by id
+ */
 function users_update_name_by_id(
 	PDO $db, 
 	string $id,
@@ -116,6 +138,10 @@ function users_update_name_by_id(
 	return $stmt->execute($params);
 }
 
+
+/**
+ * Update record email field by id
+ */
 function users_update_email_by_id(
 	PDO $db, 
 	string $id,
@@ -145,6 +171,10 @@ function users_update_email_by_id(
 	return $stmt->execute($params);
 }
 
+
+/**
+ * Update record password field by id
+ */
 function users_update_password_by_id(
 	PDO $db, 
 	string $id,
@@ -177,6 +207,10 @@ function users_update_password_by_id(
 	return $stmt->execute($params);
 }
 
+
+/**
+ * Delete record by id
+ */
 function users_delete_by_id(
 	PDO $db, 
 	string $id

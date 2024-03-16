@@ -14,17 +14,17 @@
 	<title><?=( $__title__ ?? APP_NAME )?></title>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-	<link rel="stylesheet" href="<?=asset("app.css")?>">
+	<link rel="stylesheet" href="<?=asset("css/app.css")?>">
 	<?php if(isset($__styles__)): ?>
 		<?php foreach($__styles__ as $key => $value): ?>
-			<link rel="stylesheet" href="<?=asset($value)?>">
+			<link rel="stylesheet" href="<?=asset("css/{$value}")?>">
 		<?php endforeach; ?>
 	<?php endif; ?>
 
-	<script src="<?=asset("app.js")?>" defer type="module"></script>
+	<script src="<?=asset("js/app.js")?>" defer type="module"></script>
 	<?php if(isset($__scripts__)): ?>
 		<?php foreach($__scripts__ as $key => $value): ?>
-			<script src="<?=asset($value)?>" defer type="module"></script>
+			<script src="<?=asset("js/{$value}")?>" defer type="module"></script>
 		<?php endforeach; ?>
 	<?php endif; ?>
 

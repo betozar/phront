@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * ================================
+ * Settings
+ * ================================
+ */
+
+
+// Application related
 define('APP_DEBUG', true);
 define('APP_LANG', 'en');
 define('APP_TIMEZONE', 'America/Mexico_City');
@@ -7,11 +15,18 @@ define('APP_NAME', 'PHRONT');
 define('APP_URL', 'http://localhost:8000');
 define('APP_LANG_SUPPORTED', [ 'en', 'es' ]);
 define('APP_LANG_DEFAULT', 'en');
+
+
+// URL's
 define('ASSET_URL', 'http://localhost:5173');
 define('STATIC_URL', APP_URL.'/static');
 
+
+// Key to be used at $_SESSION, $_SERVER, $_ENV ...
 define('SESSION_FIELD', 'phront');
 
+
+// Paths
 define('BASE_PATH', __DIR__ . '/..');
 define('SRC_PATH', __DIR__);
 
@@ -38,22 +53,9 @@ define('COMPOSER_AUTOLOADER', BASE_PATH.'/vendor/autoload.php');
 define('VALIDATION_PATH', SRC_PATH.'/validations');
 define('TABLE_PATH', SRC_PATH.'/tables');
 
-define('HTTP_OK', 200);
-define('HTTP_CREATED', 201);
-define('HTTP_ACCEPTED', 202);
-define('HTTP_NO_CONTENT', 204);
-define('HTTP_REDIRECT_PERMANENTLY', 301);
-define('HTTP_REDIRECT', 303);
-define('HTTP_BAD_REQUEST', 400);
-define('HTTP_UNAUTHORIZED', 401);
-define('HTTP_FORBIDDEN', 403);
-define('HTTP_NOT_FOUND', 404);
-define('HTTP_METHOD_NOT_ALLOWED', 405);
-define('HTTP_NOT_ACCEPTABLE', 406);
-define('HTTP_INTERNAL_SERVER_ERROR', 500);
-define('HTTP_NOT_IMPLEMENTED', 501);
 
-define('SQLITE_PATH', DB_PATH.'/db.sqlite');
+// Database 
+define('SQLITE_PATH', DB_PATH.'/phront.sqlite');
 
 define('MYSQL_HOST', 'localhost');
 define('MYSQL_PORT', '3306');

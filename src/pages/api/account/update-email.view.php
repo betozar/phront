@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * ================================================
+ * Update authenticated account
+ * ================================================
+ */
+
 require_once TABLE_PATH . '/users.db.php';
 require_once VALIDATION_PATH . '/account.val.php';
 
