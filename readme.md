@@ -8,6 +8,6 @@ It's really incredible how local business can make a lot of money (for local sco
 
 Simplicity, minimalism and client-first approach, these are the reasons why PHRONT is here, CHOOSE THE RIGHT TOOL FOR THE RIGHT NEED.
 
-[Full PHRONT documentation](./docs/phront)
+[Full PHRONT documentation](./docs/phront.md)
 
 # License MIT
