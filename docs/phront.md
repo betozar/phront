@@ -6,8 +6,40 @@
 * MariaDB or Mysql
 * Apache2
 * NodeJS >= 20.*.*
+* SQLITE >= 3
 
 ## Installation
+
+The installation process is really simple
+
+* First clone repository
+```bash
+git clone https://github.com/betozar/phront.git my-project
+cd my-project
+```
+
+* Then reset git and start a new repository
+```bash
+rm -rf .git
+git init
+git add . && git commit -m "first commit"
+```
+
+* Now copy `src/config.example.php` to ``src/config.php`
+```bash
+cp src/config.example.php src/config.php
+```
+
+* Create new file for sqlite database
+```bash
+touch storage/database/phront.sqlite
+```
+
+* Apply SQL schema to database
+```bash
+sqlite3 storage/database/phront.sqlite < src/schemas/0001_users_table.sql
+sqlite3 storage/database/phront.sqlite < src/schemas/0002_user_preferences_table.sql
+```
 
 ## Why PHRONT
 
