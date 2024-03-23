@@ -13,6 +13,12 @@ http_only_post();
 http_only_auth();
 
 $db = db_sqlite_connect();
+$form_route = 'account/edit-email';
+$user_id = auth_get('id');
+$http_body = null;
+$email = null;
+$email_failed = null;
+$updated = false;
 
 if( is_null($db) )
 {
@@ -20,37 +26,39 @@ if( is_null($db) )
     'email' => __('Service is unavailable')
   ]);
 
-  http_redirect('auth/edit-email');
+  http_redirect($form_route);
 }
 
 $http_body = http_request_body();
-
 $email = $http_body['email'] ?? null;
-
 $email_failed = validate_email($email, $db);
 
 if( !is_null($email_failed) )
 {
-  flash_set('email', $email);
+  flash_set('input', [
+    'email' => $email
+  ]);
   flash_set('errors', [
     'email' => $email_failed
   ]);
-  http_redirect('account/edit-email');
+  http_redirect($form_route);
 }
 
 $updated = users_update_email_by_id(
   $db, 
-  auth_get('id'), 
+  $user_id, 
   ['email' => $email]
 );
 
 if( !$updated )
 {
-  flash_set('email', $email);
+  flash_set('input', [
+    'email' => $email
+  ]);
   flash_set('errors', [
     'email' => __('Account can not be updated')
   ]);
-  http_redirect('account/edit-email');
+  http_redirect($form_route);
 }
 
 flash_set('alert', [
@@ -63,4 +71,4 @@ flash_set('alert', [
 
 auth_set('email', $email);
 
-http_redirect('account/edit-email');
+http_redirect($form_route);

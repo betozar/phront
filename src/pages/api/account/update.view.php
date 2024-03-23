@@ -13,6 +13,12 @@ http_only_post();
 http_only_auth();
 
 $db = db_sqlite_connect();
+$user_id = auth_get('id');
+$form_route = 'account';
+$http_body = null;
+$name = null;
+$name_failed = null;
+$updated = false;
 
 if( is_null($db) )
 {
@@ -20,37 +26,43 @@ if( is_null($db) )
     'email' => __('Service is unavailable')
   ]);
 
-  http_redirect('account');
+  http_redirect($form_route);
 }
 
 $http_body = http_request_body();
-
 $name = $http_body['name'] ?? null;
-
 $name_failed = validate_name($name);
 
 if( !is_null($name_failed) )
 {
-  flash_set('name', $name);
+  flash_set('input', [
+    'name' => $name
+  ]);
+
   flash_set('errors', [
     'name' => $name_failed
   ]);
-  http_redirect('account');
+
+  http_redirect($form_route);
 }
 
 $updated = users_update_name_by_id(
   $db, 
-  auth_get('id'), 
+  $user_id, 
   ['name' => $name]
 );
 
 if( !$updated )
 {
-  flash_set('name', $name);
+  flash_set('input', [
+    'name' => $name
+  ]);
+
   flash_set('errors', [
     'name' => __('Account can not be updated')
   ]);
-  http_redirect('account');
+  
+  http_redirect($form_route);
 }
 
 flash_set('alert', [
@@ -63,4 +75,4 @@ flash_set('alert', [
 
 auth_set('name', $name);
 
-http_redirect('account');
+http_redirect($form_route);

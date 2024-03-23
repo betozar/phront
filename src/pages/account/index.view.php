@@ -3,7 +3,9 @@
 http_only_get();
 http_only_auth();
 
-$name = flash_get('name', auth_get('name'));
+$input = flash_get('input', []);
+
+$name = $input['name'] ?? auth_get('name');
 $errors = flash_get('errors', []);
 
 ?>

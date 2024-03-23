@@ -3,7 +3,8 @@
 http_only_get();
 http_only_auth();
 
-$email = flash_get('email', auth_get('email'));
+$input = flash_get('input', []);
+$email = $input['email'] ?? auth_get('email');
 $errors = flash_get('errors', []);
 
 ?>
@@ -16,7 +17,7 @@ $errors = flash_get('errors', []);
 
 <form action="/api/account/update-email" method="POST">
   <label for="email"><?=__('Email Address')?></label>
-  <input type="text" name="email" id="email" value="<?=$email?>">
+  <input type="email" name="email" id="email" value="<?=$email?>">
   <br>
   <?php if(count($errors) > 0): ?>
     <?php foreach($errors as $key => $msg): ?>

@@ -13,6 +13,9 @@ http_only_post();
 http_only_auth();
 
 $db = db_sqlite_connect();
+$form_route = 'account/delete';
+$user_id = auth_get('id');
+$deleted = false;
 
 if( is_null($db) )
 {
@@ -20,20 +23,20 @@ if( is_null($db) )
     'email' => __('Service is unavailable')
   ]);
 
-  http_redirect('auth/edit-email');
+  http_redirect($form_route);
 }
 
-user_preferences_delete($db, auth_get('id'));
+user_preferences_delete($db, $user_id);
 
-$deleted = users_delete_by_id($db, auth_get('id'));
+$deleted = users_delete_by_id($db, $user_id);
 
 if(!$deleted) {
   flash_set('alert', [
     'type' => 'error',
     'message' => __('Account can not be deleted')
   ]);
-}  else {
-  logout();
+  http_redirect($form_route);
 }
 
+logout();
 http_redirect();

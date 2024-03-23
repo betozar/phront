@@ -3,8 +3,10 @@
 http_only_get();
 http_only_auth();
 
-$password = flash_get('password', '');
-$password_confirm = flash_get('password_confirm', '');
+$input = flash_get('input', []);
+
+$password = $input['password'] ?? '';
+$password_confirm = $input['password_confirm'] ?? '';
 $errors = flash_get('errors', []);
 
 ?>
