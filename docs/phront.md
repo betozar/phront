@@ -25,7 +25,7 @@ git init
 git add . && git commit -m "first commit"
 ```
 
-* Now copy `src/config.example.php` to ``src/config.php`
+* Now copy `src/config.example.php` to `src/config.php`
 ```bash
 cp src/config.example.php src/config.php
 ```
